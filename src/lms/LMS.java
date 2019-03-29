@@ -56,6 +56,7 @@ public class LMS extends JFrame implements ActionListener{
         stdt.addActionListener(this);
         facty.setBounds(80,120,180,30);
         facty.addActionListener(this);
+        setTitle("GRAY LMS LAUNCHER");
         add(stdt);
         add(facty);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
