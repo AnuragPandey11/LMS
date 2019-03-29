@@ -36,6 +36,7 @@ public class StudentScreen extends JFrame implements ActionListener, MouseListen
     JPanel cont=new JPanel();
     JScrollPane scrl;
     String uid="";
+    List<Map> data;
     
     public StudentScreen(String nme,String id)
     {
@@ -58,10 +59,10 @@ public class StudentScreen extends JFrame implements ActionListener, MouseListen
         if(dat.isSuccess())
         {
             int y=50;
-            List<Map> data = sort(dat.getData());
+            data = sort(dat.getData());
             for(Map dta:data)
             {
-                JButton down=new JButton(""+dta.get("file"));
+                JButton down=new JButton(getNameFile(""+dta.get("file")));
                 System.out.println("JBUTTON ADDED");
                 down.setBounds(40, y, 200, 30);
                 down.addActionListener(this);
@@ -102,9 +103,10 @@ public class StudentScreen extends JFrame implements ActionListener, MouseListen
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton but=(JButton)e.getSource();
-        String path=but.getText();
+        String path=""+data.get(download.indexOf(e.getSource())).get("file");
+        String top=""+data.get(download.indexOf(e.getSource())).get("topic");
         System.out.println(path);
-        Download.add(path,uid);
+        Download.add(top,uid);
         try {
             Process p = Runtime.getRuntime().exec(new String[] {path});
         } catch (IOException exp) {
@@ -167,5 +169,19 @@ public class StudentScreen extends JFrame implements ActionListener, MouseListen
             ex.printStackTrace();
             return null;
         }
+    }
+
+    private String getNameFile(String string) {
+        String name="";
+        for(int i=0;i<string.length();i++)
+        {
+            if(string.charAt(i)=='\\')
+            {
+                name="";
+            }
+            else
+                name+=string.charAt(i);
+        }
+        return name;
     }
 }
