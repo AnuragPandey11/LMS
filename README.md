@@ -5,3 +5,5 @@
   Download/Clone the repository > Goto dist folder > execute Command "java -jar LMS.jar" or double click the LMS.jar file to execute the code.
 ## Prequisites
   Suitable JDK required
+## Issues
+  Mail us at - grayhathacks10@gmail.com for any issues , feedbacks or other details
