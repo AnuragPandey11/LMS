@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class Data {
 
-    List<Map> files=new LinkedList<>();
+    List<Map<String, String>> files=new LinkedList<>();
     boolean present=false;
     
     public Data() {
@@ -47,18 +47,19 @@ public class Data {
             }
             for(int i=0;i<dat.size()-2;i+=3)
             {
-                Map m=new LinkedHashMap<>();
+                Map<String,String> m=new LinkedHashMap<>();
                 m.put("file",dat.get(i));
                 m.put("topic",dat.get(i+1));
                 m.put("author",dat.get(i+2));
                 files.add(m);
             }
+            sc.close();
         } catch (Exception ex) {
             Logger.getLogger(Data.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    List<Map> getData() {
+    List<Map<String,String>> getData() {
         return files;
     }
 

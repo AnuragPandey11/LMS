@@ -61,7 +61,6 @@ public class StudentMainScreen extends javax.swing.JFrame {
         uid.setText("--UID HERE--");
         uid.setBorder(null);
         uid.setCaretColor(java.awt.Color.blue);
-        uid.setOpaque(false);
         uid.setSelectedTextColor(new java.awt.Color(51, 51, 255));
         uid.setSelectionColor(new java.awt.Color(0, 0, 0));
 
@@ -135,7 +134,6 @@ public class StudentMainScreen extends javax.swing.JFrame {
         name.setText("--NAME HERE--");
         name.setBorder(null);
         name.setCaretColor(java.awt.Color.blue);
-        name.setOpaque(false);
         name.setSelectedTextColor(new java.awt.Color(51, 51, 255));
         name.setSelectionColor(new java.awt.Color(0, 0, 0));
         mainPanel.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 190, 34));
@@ -149,7 +147,6 @@ public class StudentMainScreen extends javax.swing.JFrame {
         phone.setText("--PHONE NUMBER--");
         phone.setBorder(null);
         phone.setCaretColor(java.awt.Color.blue);
-        phone.setOpaque(false);
         phone.setSelectedTextColor(new java.awt.Color(51, 51, 255));
         phone.setSelectionColor(new java.awt.Color(0, 0, 0));
         phone.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -200,7 +197,6 @@ public class StudentMainScreen extends javax.swing.JFrame {
         uid1.setText("--UID HERE--");
         uid1.setBorder(null);
         uid1.setCaretColor(java.awt.Color.blue);
-        uid1.setOpaque(false);
         uid1.setSelectedTextColor(new java.awt.Color(51, 51, 255));
         uid1.setSelectionColor(new java.awt.Color(0, 0, 0));
         mainPanel.add(uid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 228, 34));

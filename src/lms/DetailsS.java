@@ -71,6 +71,7 @@ public class DetailsS {
             {
                 dat.add(sc.nextLine().trim());
             }
+            sc.close();
         } catch (Exception ex) {
             Logger.getLogger(Data.class.getName()).log(Level.SEVERE, null, ex);
         }

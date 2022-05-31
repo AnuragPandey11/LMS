@@ -36,7 +36,7 @@ public class StudentScreen extends JFrame implements ActionListener, MouseListen
     JPanel cont=new JPanel();
     JScrollPane scrl;
     String uid="";
-    List<Map> data;
+    List<Map<String,String>> data;
     
     public StudentScreen(String nme,String id)
     {
@@ -60,7 +60,7 @@ public class StudentScreen extends JFrame implements ActionListener, MouseListen
         {
             int y=50;
             data = sort(dat.getData());
-            for(Map dta:data)
+            for(Map<String,String> dta:data)
             {
                 JButton down=new JButton(getNameFile(""+dta.get("file")));
                 System.out.println("JBUTTON ADDED");
@@ -141,9 +141,9 @@ public class StudentScreen extends JFrame implements ActionListener, MouseListen
     @Override
     public void mouseExited(MouseEvent e) {}
 
-    private List<Map> sort(List<Map> data) {
+    private List<Map<String,String>> sort(List<Map<String,String>> data) {
         try {
-            List<Map> out=new LinkedList<>();
+            List<Map<String,String>> out=new LinkedList<>();
             DetailsS ob=new DetailsS(uid,false);
             List<String> down=ob.getDownloads();
             if(down.size()<1)
@@ -154,7 +154,7 @@ public class StudentScreen extends JFrame implements ActionListener, MouseListen
                 String top=""+(data.get(i)).get("topic");
                 if(top.equalsIgnoreCase(recent))
                 {
-                    List<Map> tmp=out;
+                    List<Map<String,String>> tmp=out;
                     out=new LinkedList<>();
                     out.add(data.get(i));
                     out.addAll(tmp);
